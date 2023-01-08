@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        .container{
+            text-align: center;
+            margin: auto;
+            border-radius: 10px;
+            display: inline-block;
+            padding: 40px;
+            background-color: aliceblue;
+            margin-top: 100px;
+        }
+        .container input{
+            margin-top: 10px;
+        }
+        input[type = 'submit']{
+            background-color: rgb(15, 149, 62);
+            border: none;
+            border-radius: 10px;
+            font-size: larger;
+            width: 100%;
+            color: black;
+        }
+        input[type = 'submit']:hover{
+            background-color: rgb(14, 228, 53);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="register" method="post">
+            {% csrf_token %}
+            <input type="text" name="first_name" id="" placeholder="First Name" required> <br>
+            <input type="text" name="last_name" id="" placeholder="Last Name"> <br>
+            <input type="text" name="username" id="" placeholder="User Name"> <br>
+            <input type="email" name="email" id="" placeholder="email"> <br>
+            <input type="password" name="password" id="" placeholder="password"> <br>
+            <input type="submit">
+        </form>
+    </div>
+    <div>
+        {% for message in messages %}
+        <h3> {{message}} </h3>
+        {% endfor %}
+    </div>
+</body>
+
+</html>

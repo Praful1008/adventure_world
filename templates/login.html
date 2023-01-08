@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        .container {
+            background-color: aliceblue;
+            margin: auto;
+            padding: 40px;
+            margin-top: 40px;
+            display: inline-block;
+
+        }
+
+        input {
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        input[type="submit"] {
+            border-radius: 20px;
+            background-color: lightseagreen;
+            border: none;
+            font-size: larger;
+        }
+
+        input[type="submit"]:hover {
+            background-color: lightgreen;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>LOGIN</h2>
+    <div class="container">
+        <form action="" method="post">
+            {% csrf_token %}
+            <input type="text" name="username" id="" placeholder="username">
+            <br>
+            <input type="password" name="password" id="" placeholder="password">
+            <br>
+            <input type="submit">
+        </form>
+    </div>
+    <div>
+        {% for message in messages %}
+            <h2> {{message}} </h2>
+        {% endfor %}
+    </div>
+</body>
+
+</html>
